@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .f{
+      padding: 10px 10px;
+      position: relative;
+    }
+    .ch1{
+      width: 169px;
+      height: 80px;
+      box-shadow: 0px 1px 4px 0px;
+      background-color: #fff;
+      z-index: 1;
+    }
+    .ch2{
+      width: 10px;
+      height: 20px;
+      position: absolute;
+      top: 40px;
+      background-color: #fff;
+      border-radius: 0 30px 30px 0;
+      z-index: 10px;
+      box-shadow: 1px 1px 1px 0px;
+    }
+   .mode{
+      width: 10px;
+      height: 20px;
+      position: absolute;
+      top: 40px;
+      background-color: #000;
+      border-radius: 0 30px 30px 0;
+      z-index: 999px;
+      box-shadow: 1px 1px 1px 0px;
+   }
+  </style>
+</head>
+<body>
+  <div class="f">
+      <div class="ch1">
+        <div class="mode"></div>
+      </div>
+      <div class="ch2"></div>
+  </div>
+
+</body>
+</html>

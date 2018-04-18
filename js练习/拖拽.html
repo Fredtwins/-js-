@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box{
+      border:1px solid #000;
+    }
+
+</style>
+</head>
+
+<body>
+  <div id='box' style="position:absolute;width:100px;height:100px;background-color:'#ee735c'">
+    <div>111111111111111111</div>
+  </div>
+  <div class="model">
+      <div class="content">
+        <span>头部</span>
+      </div>
+  </div>
+  <script>
+    var oDiv = document.getElementById('box')
+    
+    move_dom(oDiv);
+    function move_dom(oDiv){
+      oDiv.onmousedown = function (ev) {
+        var disX = ev.clientX - oDiv.offsetLeft
+          var disY = ev.clientY - oDiv.offsetTop
+
+          document.onmousemove = function (ev) {
+            var l = ev.clientX - disX
+            var t = ev.clientY - disY
+
+            oDiv.style.left = l + 'px'
+            oDiv.style.top = t + 'px'
+          }
+          document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null
+          }
+      }
+    }
+
+  </script>
+</body>
+
+</html>

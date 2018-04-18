@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			var aa = [
+				{
+					rolename: '系统管理员',
+					roleid: '10001',
+					system_id: '10000100'
+				},
+				{
+					rolename: '角色管理',
+					roleid: '10002',
+					system_id: '100001002'
+				},
+				{
+					rolename: '模块管理',
+					roleid: '10003',
+					system_id: '100001001'
+				},
+			];
+			//1.先看是什么类型的数据，看看需不需要转换
+			//2.在设置一个空的容器来装
+			//3.循环遍历这数据中的东西
+			//4.然后在将数据赋值到新的容器中去
+			//5.因为是循环，所以在前面加上新的容器，这样可以保证全部数据都可以出现
+			var arr ="";
+			for(var i = 0; i < aa.length; i++) {
+				arr = arr+aa[i].roleid+","		
+			}
+			//substring是删除的一个方法，这里是用来删除最后一个逗号
+			arr=arr.substring(0,arr.length-1)
+			//concat是在数据最后加上你要加的东西
+			arr=arr.concat('|#|in');
+			console.log(arr)
+//			console.log(aa.length);
+		</script>
+	</body>
+
+</html>

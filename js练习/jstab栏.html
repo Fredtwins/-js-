@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab栏切换原理</title>
+    <style>
+        .box{
+            width: 400px;
+            margin: 100px auto;
+            border: 1px solid #eee;
+        }
+        .bottom div{
+            width: 100%;
+            height: 300px;
+            background-color: pink;
+            display: none;
+        }
+        .purple{
+            background-color: yellow;
+        }
+        .bottom .show{
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var btns = document.getElementsByTagName("button");//获取所有按钮
+            var divs = document.getElementById("divs").getElementsByTagName("div");//获取所有盒子
+
+            for(var i = 0;i<btns.length;i++){ //循环遍历所有table栏按钮
+                btns[i].index = i; //获取索引号 从0开始
+                btns[i].onclick = function(){ 
+                    //让所有btns类名都清空
+                    for(var i = 0;i<btns.length;i++){ //点击按钮后 清除所有按钮和盒子的类名
+                        btns[i].className = "";
+                        divs[i].className = "";
+                    }
+                    //当前点击的按钮添加类名
+                    this.className = "purple";
+                    divs[this.index].className = "show"; //给点击的按钮所对应的盒子添加类名
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="top">
+            <button>第一个</button>
+            <button>第二个</button>
+            <button>第三个</button>
+            <button>第四个</button>
+            <button>第五个</button>
+        </div>
+        <div class="bottom" id="divs">
+            <div class="show">1号盒子</div>
+            <div>2号盒子</div>
+            <div>3号盒子</div>
+            <div>4号盒子</div>
+            <div>5号盒子</div>
+        </div>
+    </div>
+</body>
+</html>

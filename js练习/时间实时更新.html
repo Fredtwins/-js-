@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.newtime {
+				text-align: center;
+				padding-top: 100px;
+				font-size: 60px;
+			}
+		</style>
+	</head>
+
+	<body onload="showtime()">
+		<div class="newtime" id="time">
+		</div>
+	</body>
+	<script type="text/javascript">
+		function showtime() {
+			var myDate = new Date();
+			var hours = myDate.getHours();
+			var minute = myDate.getMinutes();
+			var seconds = myDate.getSeconds();
+
+			if(hours < 10) {
+				hours = "0" + hours;
+			}
+
+			if(minute < 10) {
+				minute = "0" + minute;
+			}
+
+			if(seconds < 10) {
+				seconds = "0" + seconds;
+			}
+
+			document.getElementById("time").innerHTML = hours + ":" + minute + ":" + seconds;
+
+			setTimeout("showtime()", 1000);
+		}
+	</script>
+
+</html>

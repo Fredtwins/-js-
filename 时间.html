@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//			 var t = new Date();  
+			//  		 var now = t.toLocaleTimeString().replace(/^\D*/, '')  
+			//  		 var num = now.indexOf(':');  
+			//  		 var time = now.substring(0, num) + ":00:00";  
+			//  		 console.log(time);
+
+			var timestamp = Date.parse(new Date());
+			console.log(timestamp)
+			//获取的时间戳是把毫秒改成000显示，
+
+			//减去5分钟
+			var timeAgo = timestamp - 60 * 5 * 1000;
+			console.log(timeAgo)
+
+//			 Date.prototype.toLocaleString = function() {
+//				return this.getFullYear() + "/" + (this.getMonth() + 1) + "/" + this.getDate() + "/ " + this.getHours() + ":" + this.getMinutes() + ":" + this.getSeconds();
+//			};
+		</script>
+	</body>
+
+</html>

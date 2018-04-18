@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .wrapper {
+            width: 1000px;
+            height: 475px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        .tab {
+            border: 1px solid #ddd;
+            border-bottom: 0;
+            height: 36px;
+            width: 320px;
+        }
+
+        .tab li {
+            position: relative;
+            float: left;
+            width: 80px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            cursor: pointer;
+            border-top: 4px solid #fff;
+        }
+
+        .tab span {
+            position: absolute;
+            right: 0;
+            top: 10px;
+            background: #ddd;
+            width: 1px;
+            height: 14px;
+            overflow: hidden;
+        }
+
+        .products {
+            width: 1002px;
+            border: 1px solid #ddd;
+            height: 476px;
+        }
+
+        .products .main {
+            float: left;
+            display: none;
+        }
+
+        .products .main.selected {
+            display: block;
+        }
+
+        .tab li.active {
+            border-color: red;
+            border-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul class="tab">
+            <li class="tab-item active">学校名称
+                <span>◆</span>
+            </li>
+            <li class="tab-item">险段名称
+                <span>◆</span>
+            </li>
+            <li class="tab-item">水库名称
+                <span>◆</span>
+            </li>
+            <li class="tab-item">山塘名称</li>
+        </ul>
+        <div class="products">
+            <div class="main selected">
+                <tr>
+                    <td class="ed-label">学校名称</td>
+                    <td class="ed-content">
+                        <Input placeholder="请输入" style="width:80%"></Input>
+                    </td>
+                </tr>
+            </div>
+            <div class="main">
+                <tr>
+                    <td class="ed-label">险段名称</td>
+                    <td class="ed-content">
+                        <Input placeholder="请输入" style="width:80%"></Input>
+                    </td>
+                </tr>
+            </div>
+            <div class="main">
+                <tr>
+                    <td class="ed-label">水库名称</td>
+                    <td class="ed-content">
+                        <Input placeholder="请输入" style="width:80%"></Input>
+                    </td>
+                </tr>
+            </div>
+            <div class="main">
+                <tr>
+                    <td class="ed-label">山塘名称</td>
+                    <td class="ed-content">
+                        <Input placeholder="请输入" style="width:80%"></Input>
+                    </td>
+                </tr>
+            </div>
+        </div>
+    </div>
+    <script>
+        var lis = document.getElementsByClassName("tab-item");
+        var mains = document.getElementsByClassName("main");
+
+        for (var i = 0; i < lis.length; i++) {
+            //把每个元素的索引存储到每个元素对象身上
+            lis[i].index = i;
+            //        console.log(lis[i].index);
+            lis[i].onclick = function () {
+                //            排他的设置li的class即可
+                for (var k = 0; k < lis.length; k++) {
+                    lis[k].className = "tab-item";
+                }
+                this.className = "tab-item active";
+                // 先把之前的都隐藏，在把自己显示 （排他）
+                for (var j = 0; j < mains.length; j++) {
+                    mains[j].className = "main";
+                }
+                //            找到和这个li对应的一个div，让他显示出来
+                console.log(this.index);
+                //            var index = this.index;
+                //修改class来控制div显示
+                mains[this.index].className = "main selected";
+            }
+        }
+
+    /**
+     * 作业：
+     *      晚上把案例改成修改style的方式的
+     */
+
+
+
+    </script>
+</body>
+
+</html>

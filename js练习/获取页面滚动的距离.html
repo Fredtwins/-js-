@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+      <div style="width: 3000px;height: 3000px;border: 1px solid #000;"></div>
+    <script>
+    window.onscroll = function(){
+            console.clear();
+            //这样是得不到的
+//            console.log(window.scrollTop);
+//            console.log(window.scrollLeft);
+            //这个方式ie，火狐不支持，谷歌支持
+//            console.log(document.body.scrollTop);
+//            console.log(document.body.scrollLeft);
+            //ie和火狐支持的方式，谷歌不支持
+//            console.log(document.documentElement.scrollTop);
+//            console.log(document.documentElement.scrollLeft);
+
+            //第三个 ie8不支持 -- 高版本支持
+//            console.log(window.pageYOffset);
+//            console.log(window.pageXOffset);
+
+            console.log(getScroll().top,getScroll().left);
+        }
+        
+    </script>
+    </body>
+</html>

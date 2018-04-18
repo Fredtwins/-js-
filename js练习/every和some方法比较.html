@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let arr = [1,2,3,4,5,6];
+			//every方法:只要这个数组当中有小于2的就返回false；
+			let getnumber = arr.every((item,index,Array)=> {
+				return (item>2);
+			})
+			console.log(getnumber);
+			
+			//some方法：不管多少个，只要有一个值是符合的，就会返回true
+			let getnumbers = arr.some((item,index,Array)=>{
+				return (item > 2);
+			})
+			console.log(getnumbers);
+		</script>
+	</body>
+</html>

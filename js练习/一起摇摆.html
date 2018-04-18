@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 500px;
+      height: 400px;
+      background-color: #41b0ff;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="摇起来" id="btns">
+  <input type="button" value="停止" id="btnx">
+  <div id="box">
+
+  </div>
+  <script>
+    /*
+    每过一段时间，盒子的左右上下的位置发生改变
+    */
+    // 获取元素
+    let btns = document.getElementById("btns");
+    let box = document.getElementById("box");
+    let btnx = document.getElementById("btnx");
+    // 设置点击事件，按下时候触发事件
+    btns.onclick = () => {
+      var time = setInterval(() => {
+        box.style.position = "absolute";
+        // 位置发生改变
+        let x = Math.random() * 200;
+        let y = Math.random() * 200;
+        box.style.left = x + "px";
+        box.style.top = y + "px";
+      }, 100);
+      btnx.onclick = () => {
+        console.log(time);
+        clearInterval(time);
+      }
+    }
+  </script>
+</body>
+
+</html>

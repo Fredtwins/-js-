@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+//			var x = 1;
+//			var y = z = 0;
+//
+//			function add(n) {
+//				n = n + 1
+//			}
+//			y = add(x);
+//
+//			function add(n) {
+//				n = n + 3
+//			}
+//			z = add(x);
+//			console.log(x, y, z)
+
+
+
+			var user = {
+				conunt:1,
+				getcount() {
+					return this.conunt;
+				}
+			}
+			console.log(user.getcount());
+			var func = user.getcount;
+			console.log(func());
+		</script>
+	</body>
+
+</html>

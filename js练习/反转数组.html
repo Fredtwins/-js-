@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//reverse是反转整个数组
+			let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+			let str = arr.reverse();
+			console.log(str);
+			//sort是从小到大的排序
+			str.sort();
+			console.log(str);
+
+			//比较函数
+			function com(value1, value2) {
+				if(value1 > value2) {
+					return 1;
+				} else if(value1 < value2) {
+					return 0;
+				} else {
+					return -1;
+				}
+			}
+			let comper = [0,1,5,10,5,16,45];
+			comper.sort(com);
+			console.log(comper);
+		</script>
+	</body>
+
+</html>

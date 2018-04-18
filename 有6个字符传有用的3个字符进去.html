@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//数组形式
+			var obj = [{
+				description:"用于其他用户功能授权",
+				flag:0,
+				modules:Array(0),
+				roleid:"100001",
+				rolename:"管理员",
+				system_id:"100010",
+				system_name:"气象局"
+			}]
+			var str =[];
+			for(var i=0;i<obj.length;i++){
+					var hh = {};
+					hh.roleid=this.obj[i].roleid;
+					hh.rolename=this.obj[i].rolename;
+					hh.system_id=this.obj[i].system_id;
+					this.str.push(hh)
+			}
+			console.log(str);
+		</script>
+
+		<!--<script>
+			//对象形式
+			var obj = {
+				description: "用于其他用户功能授权",
+				flag: 0,
+				modules: Array(0),
+				roleid: "100001",
+				rolename: "管理员",
+				system_id: "100010",
+				system_name: "气象局"
+			};
+			var str = {}
+			for(var k in obj) {
+				if(k === "roleid") {
+					str[k] = obj[k]
+				} else if(k === "rolename") {
+					str[k] = obj[k]
+				}
+			}
+			console.log(str)
+		</script>-->
+
+		<script>
+			//delete删除方法
+			// var obj = {
+			// 	description: "用于其他用户功能授权",
+			// 	flag: 0,
+			// 	modules: Array(0),
+			// 	roleid: "100001",
+			// 	rolename: "管理员",
+			// 	system_id: "100010",
+			// 	system_name: "气象局"
+			// };
+			// delete obj['rolename']
+			// console.log(obj);
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--weakset结构1和set类似
+			但是只是支持对象，而不能是其他值的类型
+		-->
+		<script type="text/javascript">
+			//这个set方法对重复的不起效果，不会加进重复的值,新的数据结构
+			const str = new Set([2, 5, 6, 9, 5, 6, ])
+			console.log(...str); //2，5，6，9
+			console.log('------')
+			
+			const s = new Set();
+			[2, 3, 5, 4, 5, 2, 2].forEach(x => s.add(x));
+			console.log('------')
+			
+			for(let i of s) {
+				console.log(i);
+				//依次输入2，3，5，4
+			}
+			console.log('------')
+			
+			const set = new Set(document.querySelectorAll('div'));
+			console.log(set.size) //0
+			
+			console.log('------')
+			let sets = new Set(['red','bule','green']);
+			for(let i of sets) {
+				console.log(i);
+			}
+		</script>
+	</body>
+
+</html>

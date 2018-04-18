@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			/*
+									 箭头函数有几个使用注意点。
+
+						（1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+
+						（2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
+
+						（3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
+
+						（4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。
+									 * */
+
+			let sum = (sum1, sum2) => mun1 + mun2;
+			//			console.log(sum)
+			//上面的和下面的是一致的
+			let str = function(sum1, sum2) {
+				return mun1 + mun2
+			}
+			//			console.log(str)
+		</script>
+
+		<script>
+			//es5
+			let arr = [1, 2, 3].map(function(x) {
+				return x * x;
+			});
+			//			console.log(arr)
+
+			//es6
+			let sta = [1, 2, 3].map(x => x * x)
+			//			console.log('---------')
+			//			console.log(sta)
+		</script>
+
+		<script>
+			//			let result = values.sort(function(a, b) {
+			//				return a - b
+			//			})
+			//			console.log(result)
+
+			//			let res = values.sort((a, b) => a - b)
+		</script>
+
+		<script>
+			//斐波那契数
+			function feibonaqishu(n) {
+				if(n <= 1) {
+					return 1
+				}
+				return feibonaqishu(n - 1) + feibonaqishu(n - 2)
+			}
+			feibonaqishu(10);
+			console.log(feibonaqishu(10));
+			
+			
+//			const numsble = (...num) => num;
+//			numsble(1, 2, 3, 4, 5);
+//			console.log(numsble);
+		</script>
+
+		<script>
+//			function Timer() {
+//				this.s1 = 0;
+//				this.s2 = 0;
+//				//定时器
+//				setInterval(() => this.s1++, 1000);
+//				setInterval(function() {
+//					this.s2++
+//				}, 1000);
+//			}
+//			var timer = new Timer();
+			
+//			let fix = λf.(λx.f(λv.x(x)(v)))(λx.f(λv.x(x)(v)))
+
+
+			
+		</script>
+	</body>
+
+</html>

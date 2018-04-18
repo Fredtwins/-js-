@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//get(key) get是获取key对应的键值、如果找不到key、返回undefined；
+			let m = new Map();
+			const hello = function() {
+				//				console.log('hello');
+			}
+			m.set(hello, 'Hello world');
+			m.get(hello)
+			console.log(m);
+
+			const myMap = new Map()
+				.set(true, 7)
+				.set({
+					foo: 3
+				}, ['abc']);
+			[...myMap]
+			console.log(myMap)
+			
+			
+		</script>
+	</body>
+
+</html>

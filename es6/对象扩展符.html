@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<script>
+			//对象扩展符
+			let arr = [1,2,3];
+			//使用运算符可以让arr这个不受影响，改变的只有str的东西
+			let str = [...arr,1.2];
+			console.log(str)
+			str.push(4);
+			console.log(str);
+			console.log(arr);
+		</script>-->
+		
+		<script>
+			//rest运算符，剩余的部分
+			function aaa(first,...arr) {
+				//这里打印了，除开第一个参数剩余的东西的
+				console.log(arr.length);
+				//这里打印的是第一个参数的内容
+				console.log(first)
+			}
+			aaa(1,2,3,4,5,6,7,8,9)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>插入排序</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var CArray = function() {
+				this.dataStore = [1, 8, 3, 2, 9, 5, 4, 7]
+				this.insertSort = insertSort;
+			}
+
+			function insertSort() {
+				var temp, inner;
+				for(var i = 1; i < this.dataStore.length; i++) {
+					temp = this.dataStore[i];
+					inner = i;
+					while(inner > 0 && (this.dataStore[inner - 1] >= temp)) {
+						//  往后移动位置，让小元素移动到前面去
+						this.dataStore[inner] = this.dataStore[inner - 1];
+						console.log('内部元素', this.dataStore);
+						inner--;
+					}
+					// 插入小元素
+					this.dataStore[inner] = temp;
+					console.log('插入后的结果', this.dataStore);
+				}
+			}
+			
+			var mynums = new CArray();
+			mynums.insertSort();
+			console.log(mynums.insertSort);
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			// 尾递归，传2个参数
+			function weifeibonaqishu(n, total) {
+				if(n === 1) {
+					return total
+				}
+				return weifeibonaqishu(n - 1, n * total)
+			}
+			//正常函数
+			function fei(n) {
+				return weifeibonaqishu(n, 1)
+			}
+			
+			fei(10);
+			console.log(fei(10));
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			function feibonaqishu(n) {
+				//判断这个数是否小于等于1
+				if(n <= 1) {
+					//如果是就返回1
+					return 1
+				}
+				return feibonaqishu(n - 1) + feibonaqishu(n - 2);
+			}
+			//调用 
+			feibonaqishu(20);
+			console.log(feibonaqishu(20));//10946
+		</script>
+	</body>
+</html>

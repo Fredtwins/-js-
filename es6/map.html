@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			let sts = new Set([1, 2, 3]);
+			sts = new Set([...sts].map(x => x * 2));
+			console.log(sts);
+
+			let arr = [1, 2.2, 3123, 435, 243, 423, 21];
+
+			let getnumber = arr.map((item, index, Array) => {
+				return item * 2
+			});
+			console.log(getnumber);
+		</script>
+	</body>
+
+</html>

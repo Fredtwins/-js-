@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//es6允许函数的参数设置为默认值,可以写在参数定义的后面
+			function log(x,y = 'hello,js') {
+				console.log(x,y);
+			}
+			log('world');
+			log('world','haha');
+			log('world','');
+			
+			
+			
+		</script>
+		
+		
+		<script>
+			let sun = 'js';
+			
+			function str(func = () => sun) {
+				let sun = 'inner';
+				console.log(func())
+			}
+			str();
+			
+		</script>
+	</body>
+</html>
