@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 this的指向：当在页面全局作用域中调用this，那么这个this就是只想window
+			 * */
+			window.color = "bule";
+			let O = this.color;
+			
+			function setcolor() {
+				console.log(this.color);
+			}
+			setcolor();
+		</script>
+	</body>
+</html>

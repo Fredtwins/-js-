@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+//			function sum(num1,num2) {
+//				return num1 + num2;
+//			}
+//			sum(5,6);
+//			console.log(sum(5,6));
+			
+			
+			function factorial(num) {
+				if(num < 1) {
+					return 1
+				} else {
+					return num * arguments.callee(num - 1);
+				}
+			}
+			console.log(factorial(10));
+		</script>
+	</body>
+</html>
