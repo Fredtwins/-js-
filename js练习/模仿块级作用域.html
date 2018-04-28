@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>模仿块级作用域</title>
+</head>
+<body>
+  <script>
+
+    /* 在java和c++语言中i的初始值是为0，只会在for循环里面中有定义，一旦循环结束，那么i也就会被销毁
+
+      在js中、变量i是定义在str这个函数中，因此可以在函数内部随处访问，即使再重新申明过也不会改变他的值,像例子2：
+    
+    */
+      function str(count) {
+        for(var i = 0;i < count; i++) {
+          console.log(i);
+        }
+      }
+      str(10);
+      // console.log(str(10));
+
+
+
+      function outname(count) {
+        for(var j = 0;j < count;j++) {
+            var j;
+            console.log(j)
+        }
+      }
+      outname(10);
+  </script>
+</body>
+</html>
