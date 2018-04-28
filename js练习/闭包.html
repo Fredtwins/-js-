@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 闭包是指：有权访问另一个函数作用域里面的变量函数
+    // function cearctname(propename) {
+    //   return function (obj1, obj2) {
+    //     var val1 = obj1(propename);
+    //     var val2 = obj2(propename);
+
+    //     if (val1 > val2) {
+    //       return 1
+    //     } else if (val1 < val2) {
+    //       return -1
+    //     } else {
+    //       return0
+    //     }
+    //   }
+
+    // }
+    // cearctname(222);
+    // console.log(cearctname(222));
+
+
+
+    // 闭包只能取包含变量中最后的一个值，
+
+    function vearctname() {
+      var res = new Array();
+
+      for(var i = 0;i < 10;i++) {
+        res[i] = function() {
+          return i;
+        }
+      }(i);
+
+      return res;
+    }
+    console.log(vearctname());
+    // 会返回一个数组回来，
+
+  </script>
+</body>
+
+</html>
