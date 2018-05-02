@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>vue中animate动画效果</title>
+	<link rel="stylesheet" type="text/css" href="vue/animate.css">
+	<style>
+		#app {
+			text-align:center;
+		}
+		/* @keyframes bounce-in {
+			0% {
+				transform: scale(0);
+			}
+			50% {
+				transform: scale(1.5);
+			}
+			100% {
+				transform: scale(1);
+			}
+		}
+		.fade-enter-active {
+			transform-origin: left center;
+			animation:bounce-in 1s;
+		}
+		.fade-leave-active {
+			transform-origin: left center;
+			animation:bounce-in 1s reverse;
+		} */
+
+
+	
+	</style>
+
+</head>
+<body>
+	<div id="app">
+		<transition name="fade" enter-active-class="animated swing" leave-active-class="animated bounceOut">
+			<div v-if="show">hello world</div>
+		</transition>
+		<button @click="handelClick">按钮</button>
+	</div>
+	<script src="vue/vue234.js"></script>
+	<script>
+		var app = new Vue({
+			el:'#app',
+			data: {
+				show:false
+			},
+			methods: {
+				handelClick() {
+					this.show = !this.show;
+				}
+			}
+		})
+	</script>
+</body>
+</html>
