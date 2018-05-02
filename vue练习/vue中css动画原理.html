@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>vue中css动画原理</title>
+        <style>
+			#app {
+				text-align:center;
+			}
+
+			/* 动画transition显示中都包含着两个属性 v-enter和v-enter-active */
+			.v-enter {
+				opacity:0;
+			}
+			.v-enter-active {
+				transition: opacity 1s;
+			}
+
+			/* 动画transition隐藏中都包含两个属性 v-leave-to 和 v-leave-active */
+			.v-leave-to {
+				opacity: 0;
+			}
+			.v-leave-active {
+				transition: opacity 2s;
+			}
+        </style>
+    </head>
+    <body>
+    <div id="app">
+    	<transition>
+    		<div v-if="show">hello world</div>
+    	</transition>
+    	<button @click="handelClick">按钮</button>
+    </div>
+    <script src="vue/vue234.js"></script>
+    <script>
+    var app = new Vue({
+    	el:'#app',
+    	data: {
+    		show:false
+    	},
+    	methods: {
+    		handelClick() {
+    			this.show = !this.show;
+    		}
+    	}
+    })
+    </script>
+    </body>
+</html>
