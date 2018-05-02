@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>TodoLisi</title>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model="inputValue">
+		<button @click="handleBtn">按钮</button>
+		<ul>
+			<li v-for="item in list">{{item}}</li>
+		</ul>
+	</div>
+	<script src="vue/vue234.js"></script>
+	<script>
+	var app = new Vue({
+		el:'#app',
+		data:{
+			list:[],
+			inputValue:''
+		},
+		methods: {
+			handleBtn() {
+				// 每次点击按钮时候，都会往数组里面添加一个数据
+				this.list.push(this.inputValue);
+				//添加完后就会清空input里面的东西
+				this.inputValue = '';
+			}
+		}
+	})
+	</script>
+
+</body>
+</html>
