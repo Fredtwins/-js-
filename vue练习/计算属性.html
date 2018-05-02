@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>计算属性</title>
+    </head>
+    <body>
+    <div id="app">
+    	{{fullname}}
+    	{{age}}
+    </div>
+
+    <script src="vue/vue234.js"></script>
+    <script>
+    var app = new Vue({
+    	el:'#app',
+    	data: {
+    		firstName:'hello',
+    		lastName:'world',
+    		age:21
+    	},
+    	//计算属性中具有缓存的功能在,只有当计算属性里面的东西发生了改变的时候才会改变
+    	computed: {
+    		fullname:function() {
+    			console.log('计算属性发生了改变')
+    			//返回计算后的结果
+    			return this.firstName + " " + this.lastName;
+    		}
+    	}
+    })
+    </script>
+    </body>
+</html>
