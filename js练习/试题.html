@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//按顺序打印结果是~~
+			(function() {
+				console.log(1);
+				setTimeout(function() {
+					console.log(4)
+				},1000);
+				setTimeout(function() {
+					console.log(2)
+				},0);
+				console.log(3)
+			})();
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>
