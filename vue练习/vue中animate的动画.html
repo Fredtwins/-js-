@@ -28,6 +28,13 @@
 			animation:bounce-in 1s reverse;
 		} */
 
+		.fade-enter, .fade-leave-to {
+			opacity:0;
+		}
+		.fade-enter-active, .fade-leave-active {
+			transition: opacity 3s;
+		}
+
 
 	
 	</style>
@@ -35,7 +42,16 @@
 </head>
 <body>
 	<div id="app">
-		<transition name="fade" enter-active-class="animated swing" leave-active-class="animated bounceOut">
+	<!-- 第一次显示也有动画效果的就加上appear appear-active-class="animated 你要的动画效果"
+		 这里给动画加上type是为了以自己重新写的transition动画的时长为准
+	 -->
+		<transition 
+			:duration="5000",
+			name="fade" 
+			enter-active-class="animated swing fade-enter-active" 
+			leave-active-class="animated bounceOut fade-leave-active" 
+			appear 
+			appear-active-class="animated swing">
 			<div v-if="show">hello world</div>
 		</transition>
 		<button @click="handelClick">按钮</button>
@@ -45,7 +61,7 @@
 		var app = new Vue({
 			el:'#app',
 			data: {
-				show:false
+				show:true
 			},
 			methods: {
 				handelClick() {

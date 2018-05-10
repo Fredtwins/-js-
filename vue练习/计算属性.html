@@ -10,7 +10,7 @@
     	{{age}}
     </div>
 
-    <script src="vue/vue234.js"></script>
+    <!--<script src="vue/vue234.js"></script>
     <script>
     var app = new Vue({
     	el:'#app',
@@ -28,6 +28,30 @@
     		}
     	}
     })
+    </script>-->
+    
+    <script src="vue/vue234.js"></script>
+    <script>
+    var app = new Vue({
+    	el:'#app',
+    	data: {
+    		firstName:'hello',
+    		lastName:'world',
+    		age:21
+    	},
+    	computed: {
+    		fullname: {
+    			get() {
+    				return this.firstName + " " + this.lastName;
+    			},
+    			set(value) {
+    				console.log(value)
+    			}
+    		}
+    	}
+    })
     </script>
+    
+    
     </body>
 </html>

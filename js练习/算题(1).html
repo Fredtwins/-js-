@@ -24,15 +24,24 @@
 
 
 
-			var user = {
-				conunt:1,
-				getcount() {
-					return this.conunt;
-				}
+//			var user = {
+//				conunt:1,
+//				getcount() {
+//					return this.conunt;
+//				}
+//			}
+//			console.log(user.getcount());
+//			var func = user.getcount;
+//			console.log(func());
+
+
+			var getName = function() {
+				console.log(4)
 			}
-			console.log(user.getcount());
-			var func = user.getcount;
-			console.log(func());
+			function getName() {
+				console.log(5)
+			}
+			getName();
 		</script>
 	</body>
 
