@@ -35,13 +35,52 @@
 //			console.log(func());
 
 
-			var getName = function() {
-				console.log(4)
-			}
-			function getName() {
-				console.log(5)
-			}
-			getName();
+//			var getName = function() {
+//				console.log(4)
+//			}
+//			function getName() {
+//				console.log(5)
+//			}
+//			getName();
+
+
+
+
+
+//			var a = {}
+//				b = {key:'b'}
+//				c = {key:'c'}
+//			a[b] = 123
+//			a[c] = 456
+//			
+//			console.log(a[b])//456
+			
+			
+			
+			(function() {
+				try {
+					throw new Error();
+				} catch (x) {
+					var x = 1,y = 2;
+					console.log(x)
+				}
+				console.log(x)
+				console.log(y)
+			})()
+			
+			
+			
+//			var b = 1;
+//			function outer() {
+//				var b =2
+//				function inner() {
+//					b++
+//					var b = 3;
+//					console.log(b)
+//				}
+//				inner();
+//			}
+//			outer();
 		</script>
 	</body>
 
