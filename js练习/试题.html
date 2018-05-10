@@ -7,17 +7,65 @@
 	<body>
 		<script type="text/javascript">
 			//按顺序打印结果是~~
-			(function() {
-				console.log(1);
-				setTimeout(function() {
-					console.log(4)
-				},1000);
-				setTimeout(function() {
-					console.log(2)
-				},0);
-				console.log(3)
-			})();
+//			(function() {
+//				console.log(1);
+//				setTimeout(function() {
+//					console.log(4)
+//				},1000);
+//				setTimeout(function() {
+//					console.log(2)
+//				},0);
+//				console.log(3)
+//			})();
 			
+			
+			//使用typeof bar ===“object”来确定bar是否是一个对象时有什么潜在的缺陷？这个陷阱如何避免
+//			var bar = null;
+//			console.log(typeof bar === "object");
+//			console.log(Array.isArray(bar));
+
+
+
+
+			//下面的代码将输出到控制台的是什么，为什么
+			/*
+			由于a和b都在函数的封闭范围内定义，并且由于它们所在的行以var关键字开头，因此大多数JavaScript开发人员会希望typeof a和typeof b在上面的示例中都未定义
+			*/
+			// (function() {
+			// 	var a = b = 3;
+			// })();
+			// console.log("a defind" + (typeof a !== "undefined")); //true
+			// console.log("b defind" + (typeof b !== "undefined")); //false
+
+			
+
+
+			//下面的代码将输出到控制台的是什么
+				/*
+				在外部函数中，this和self都引用myObject，因此都可以正确地引用和访问foo。
+但在内部函数中，这不再指向myObject。因此，this.foo在内部函数中是未定义的，而对局部变量self的引用仍然在范围内并且可以在那里访问。
+				*/
+
+			var myObject = {
+				foo:'bar',
+				func:function() {
+					var that = this;
+					console.log(this.foo);
+					console.log(that.foo);
+					(function() {
+						console.log(this.foo);
+						console.log(that.foo);
+					})()
+				}
+			}
+
+			myObject.func();
+
+
+
+
+
+
 			
 			
 			
