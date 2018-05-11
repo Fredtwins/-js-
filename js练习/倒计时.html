@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-		<div class="box">
-			<input type="button" value="请仔细阅读(10)" id="btn" disabled="disabled"/>
-		</div>
-			<script>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+
+<body>
+	<div class="box">
+		<input type="button" value="请仔细阅读(10)" id="btn" disabled="disabled" />
+	</div>
+	<script>
 		/*
 		 每个1秒时间就倒退1；
 		 * */
 		let btn = document.getElementById("btn");
-	  var contn = 10;
+		var contn = 10;
 		//给一个定时器
-		let time = setInterval(()=>{
+		let time = setInterval(() => {
 			contn--;
 			//改变文本框的东西
 			btn.value = "请仔细阅读(" + contn + ")";
 			//改变按钮
-			if(contn === 0) {
+			if (contn === 0) {
 				// 清除定时器，加的是id
 				clearInterval(time);
 				this.value = "同意";
 				this.disabled = false;
 			}
-		},1000);
+		}, 1000);
 	</script>
-	</body>
+</body>
 
 </html>

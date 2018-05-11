@@ -5,7 +5,7 @@
 		<title></title>
 	</head>
 	<body>
-		<script type="text/javascript">
+		<script>
 			//按顺序打印结果是~~
 //			(function() {
 //				console.log(1);
@@ -46,20 +46,58 @@
 但在内部函数中，这不再指向myObject。因此，this.foo在内部函数中是未定义的，而对局部变量self的引用仍然在范围内并且可以在那里访问。
 				*/
 
-			var myObject = {
-				foo:'bar',
-				func:function() {
-					var that = this;
-					console.log(this.foo);
-					console.log(that.foo);
-					(function() {
-						console.log(this.foo);
-						console.log(that.foo);
-					})()
+			// var myObject = {
+			// 	foo:'bar',
+			// 	func:function() {
+			// 		var that = this;
+			// 		console.log(this.foo);
+			// 		console.log(that.foo);
+			// 		(function() {
+			// 			console.log(this.foo);
+			// 			console.log(that.foo);
+			// 		})()
+			// 	}
+			// }
+
+			// myObject.func();
+
+
+
+
+
+			// var fn = null;
+			// function foo() {
+			// 	var a = 2;
+			// 	function innerfoo() {
+			// 		// console.log(c);// is not defind
+			// 		console.log(a);//2
+			// 	}
+			// 	fn = innerfoo;
+			// }
+			// function bar() {
+			// 	var c = 10;
+			// 	fn();
+			// }
+			// foo();
+			// bar(); 
+			
+
+
+
+			// 鸡兔同笼1200只
+			function sum() {
+				var a = 0;//鸡
+				var b = 0;//兔
+				//循环判断
+				for(var a = 0;a < 1200;a++) {
+					b = 1200 - a;
+					// 判断脚数
+					if(2 * a + 4 * b == 3000) {
+						console.log("鸡" + a + "只", "兔" + b + "只")
+					}
 				}
 			}
-
-			myObject.func();
+			sum();
 
 
 

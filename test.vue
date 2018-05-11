@@ -223,7 +223,7 @@
 								<td class="ed-content" colspan="20" style="width: 100px; text-align: center; background-color: #40B0FF;color: #FFF5E6;">涉及到社区</td>
 							</tr>
 							<Button class="addbtn" @click="addbtns">
-								<Icon type="plus-round" ></Icon>
+								<Icon type="plus-round"></Icon>
 								添加
 							</Button>
 							<tr>
@@ -299,8 +299,8 @@
 							//							console.log(result)
 						});
 					},
-					moveend: () => {},
-					zoomchange: () => {},
+					moveend: () => { },
+					zoomchange: () => { },
 					click: e => {
 						this.formItem.lat = e.lnglat.O;
 						this.formItem.lng = e.lnglat.P;
@@ -319,17 +319,17 @@
 					}
 				],
 				athead: [{
-						name: "社区"
-					},
-					{
-						name: "需要转移人数"
-					},
-					{
-						name: "已转移人数"
-					},
-					{
-						name: "时间"
-					}
+					name: "社区"
+				},
+				{
+					name: "需要转移人数"
+				},
+				{
+					name: "已转移人数"
+				},
+				{
+					name: "时间"
+				}
 				],
 				tdthead: new Array(1),
 				btns: true,
@@ -377,7 +377,7 @@
 				// this.getRespontResult()
 				var arr = [];
 				this.responseResult.map(item => {
-					if(item.plan_type === "全部" || item.play_type === value) {
+					if (item.plan_type === "全部" || item.play_type === value) {
 						arr.push(item);
 					}
 				});
@@ -392,9 +392,9 @@
 				search = {
 					id: this.id
 				};
-				if(getLocalStorage("id") != "false") {
+				if (getLocalStorage("id") != "false") {
 					getUserList(search).then(res => {
-						if(res.code === ERR_OK) {
+						if (res.code === ERR_OK) {
 							this.formItem = this.formItemd;
 							this.btn = true;
 							this.btns = false;
@@ -406,7 +406,7 @@
 			_sureBtn() {
 				getaddlist(this.formItem).then(res => {
 					console.log(this.formItem);
-					if(res.code === ERR_OK) {
+					if (res.code === ERR_OK) {
 						this.$router.push("/home/depManagement/matou");
 						this.$Notice.success({
 							title: "新增成功"
@@ -423,7 +423,7 @@
 				geteditlist(this.formItem).then(res => {
 					console.log(res);
 
-					if(res.code === ERR_OK) {
+					if (res.code === ERR_OK) {
 						this.$Notice.success({
 							title: "修改成功"
 						});
@@ -440,7 +440,7 @@
 		padding-top: 20px;
 		height: 400px;
 	}
-	
+
 	.tiweiweihu {
 		height: 100%;
 		.title {
@@ -549,12 +549,12 @@
 			}
 		}
 	}
-	
+
 	#myMap1 {
 		width: 100%;
 		height: 450px;
 	}
-	
+
 	.addbtn {
 		width: 70px;
 		height: 40px;
