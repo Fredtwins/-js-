@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  
+  // function add(obj) {
+  //   console.log(obj);
+  //   var str = [];
+
+  //   obj.forEach(function(e,i,obj) {
+  //     if(obj.indexof(e) === i) {
+  //       str.push(e);
+  //     }
+  //   })
+  //   return str;
+  // }
+  //   var obj = [1,5,3,6,6,6,6,3,2,5,6,6,2,11,2,9,62,6,9,5,6666];
+  // console.log(add(obj));
+
+
+  
+
+  function array(arr) {
+    var str = [];
+
+    console.log(arr);
+    for(var i = 0;i < arr.length;i++) {
+      if(str.indexOf(arr[i]) == -1) {
+        str.push(arr[i]);
+      }
+    }
+    return str;
+  }
+  var arr = [1,5,3,6,6,6,6,3,2,5,6,6,2,11,2,9,62,6,9,5];
+  console.log(array(arr));
+  </script>
+</body>
+</html>
