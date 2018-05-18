@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>冒泡</title>
-	</head>
-	<body>
-		<script type="text/javascript">
-			 
-        var CArray = function(){
-            this.dataStore = [10,8,3,2,9,1,4,4,4];
-            this.swap = swap;
-            this.bubbleSort = bubbleSort;
-        }
-        //  交换方法
-        function swap(arr,index1,index2){
-            var temp = arr[index1];
-            arr[index1] = arr[index2];
-            arr[index2] = temp;
-        }
-        
-        //  冒泡排序
-        function bubbleSort() {
-            var data = this.dataStore;
-            numEle = data.length;
-            for(var outer=numEle;outer>=2;--outer){
-                for(var inner=0;inner<=outer-1;inner++){
-                    if(data[inner]>data[inner+1]){
-                        this.swap(this.dataStore,inner,inner+1)
+
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        // var CArray = function(){
+        //     this.dataStore = [10,8,3,2,9,1,4,4,4];
+        //     this.swap = swap;
+        //     this.bubbleSort = bubbleSort;
+        // }
+        // //  交换方法
+        // function swap(arr,index1,index2){
+        //     var temp = arr[index1];
+        //     arr[index1] = arr[index2];
+        //     arr[index2] = temp;
+        // }
+
+        // //  冒泡排序
+        // function bubbleSort() {
+        //     var data = this.dataStore;
+        //     numEle = data.length;
+        //     for(var outer=numEle;outer>=2;--outer){
+        //         for(var inner=0;inner<=outer-1;inner++){
+        //             if(data[inner]>data[inner+1]){
+        //                 this.swap(this.dataStore,inner,inner+1)
+        //             }
+        //         }
+        //     }
+        // }
+        // var mynums = new CArray();
+        // mynums.bubbleSort(mynums);
+        // console.log(mynums.dataStore);
+
+
+        var examplearr = [8, 94, 15, 88, 55, 76, 21, 39];
+        function sortarr(arr) {
+            for (i = 0; i < arr.length - 1; i++) {
+                for (j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
                     }
                 }
             }
+            return arr;
         }
-        var mynums = new CArray();
-        mynums.bubbleSort(mynums);
-        console.log(mynums.dataStore);
+        sortarr(examplearr);
+        console.log(examplearr);
 
 
-        
 
-		</script>
-	</body>
+
+    </script>
+</body>
+
 </html>
