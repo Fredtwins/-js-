@@ -13,12 +13,12 @@ const app = new Koa();
 //   ctx.response.body = "<h1>Hello, koa21111111!</h1>"
 // })
 
-app.use( function async(ctx, next) {
+app.use(function async(ctx,next) {
   // await next();
   // 设置response的Content-Type:
   ctx.response.type = "text/html";
   // 设置response的内容:
-  ctx.response.body = "<h1>Hello, koa2!!!!!</h1>"
+  ctx.response.body = "<h1>koa2,你好咯ha</h1>";
 })
 
 /*
