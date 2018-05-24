@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- <meta charset="UTF-8"> -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="renderer" content="webkit" />
+  <title>demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    .box {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+      margin: -100px 0 0 -100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box" class="box"></div>
+
+  <script>
+    var _box = document.getElementById("box");
+    
+    var time;
+    var count;
+    var stops = false;
+
+    _box.addEventListener("touchstart",function() {
+      
+      event.preventDefault();
+      if(stops) return false;
+      stops = true;
+      count = 0;
+      time = setInterval(function() {
+        count++;
+        console.log(count);
+      },1000)
+    },false);
+
+    _box.addEventListener("touchend",function() {
+		event.preventDefault();
+		stops=false;
+		clearInterval(time);
+		console.log(count);
+	}, false);
+
+  </script>
+</body>
+
+</html>
