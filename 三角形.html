@@ -134,7 +134,75 @@
     <span></span>
   </div>
   <script>  
-    console.log(["1", "2", "3"].map(parselnt));
+    // console.log(["1", "2", "3"].map(parselnt));
+
+
+    function CodingMan(name) {
+      this.timer0 = null;
+      this.timer = null;
+      this.isSleep = false;
+
+      this.queue = [];
+
+      this.eat = (food) => {
+        this.queue.push("Eat " + food + "~");
+        return this;
+      }
+
+      this.hello = () => {
+        console.log("Hi this is " + name)
+      }
+
+      this.pushHello = () => {
+        this.queue.splice(0, 0, "Hi this is " + name)
+      }
+
+      this.sleepFirst = (t) => {
+        clearTimeout(this.timer0);
+        clearTimeout(this.timer);
+        this.queue.push("wake up after " + t);
+        setTimeout(() => {
+          this.sleep(0);
+        }, t * 1000)
+        return this;
+      }
+
+      this.sleep = (t) => {
+        clearTimeout(this.timer0);
+        this.timer0 = this.setTimeout(() => {
+          this.hello();
+        }, 0);
+
+        clearTimeout(this.timer);
+        if (t) {
+          this.queue.push("wake up after " + t);
+        }
+        this.timer = setTimeout(() => {
+          this.wake();
+        }, t * 1000);
+        return this;
+      }
+
+      this.wake = () => {
+        for (let i of this.queue) {
+          console.log(i);
+        }
+      }
+
+      this.timer0 = this.setTimeout(() => {
+        this.sleep(0);
+      }, 0);
+
+      return this;
+    }
+
+// CodingMan("Peter");
+
+// CodingMan("Peter").sleep(3).eat("dinner");
+
+// CodingMan("Peter").eat("dinner").eat("supper");
+
+// CodingMan("Peter").sleepFirst(5).eat("supper");
   </script>
 </body>
 

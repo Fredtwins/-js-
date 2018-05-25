@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let p = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log("执行成功");
+        resolve("我是成功的！");
+        console.log('-----------------')
+      }, 2000)
+    });
+
+    /*
+    then 链式操作的用法  所以，从表面上看，Promise只是能够简化层层回调的写法，
+    而实质上，Promise的精髓是“状态”，用维护状态、传递状态的方式来使得回调函数能够及时调用，
+    它比传递callback函数要简单、灵活的多。所以使用Promise的正确场景是这样的：
+    
+    */
+
+
+    p.then((data) => {
+      //这里打印出来的是上面resolve里面的内容
+      console.log(data);
+    })
+      .then((data) => {
+        //undefined
+        console.log(data);
+      })
+      .then((data) => {
+        //undefined
+        console.log(data)
+      })
+  </script>
+</body>
+
+</html>
