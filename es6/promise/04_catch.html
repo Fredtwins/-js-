@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    效果和寫在then的第二個參數裏面一樣。
+    不過它還有另外一個作用：在執行resolve的回調（也就是上面then中的第一個參數）時，
+    如果拋出異常了（代碼出錯了），
+    那麼並不會報錯卡死js，
+    而是會進到這個catch方法中。
+    */
+
+    let p = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        var arr = Math.ceil(Math.random() * 10);
+        if (arr < 5) {
+          resolve(arr);
+        } else {
+          reject('数字太大了');
+        }
+      }, 0)
+    })
+
+    p.then((data) => {
+      console.log('resolve', data);
+    })
+      .catch((err) => {
+        console.log('reject', err);
+      })
+  </script>
+</body>
+
+</html>

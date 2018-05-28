@@ -23,8 +23,10 @@
     })
 
     p.then((data) => {
+      //打印出来的是数字，如果判断成立的话
       console.log('resolve', data);
     }, (err) => {
+      //判断如果不成立的话就会返回错误的，也就是reject
       console.log('reject', err);
     })
 
