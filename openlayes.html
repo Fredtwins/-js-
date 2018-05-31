@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
+  <style>
+    .map {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <script src="https://openlayers.org/en/v4.6.5/build/ol.js" type="text/javascript"></script>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script> 
+</head>
+<body>
+  <!-- <h2>My Map</h2> -->
+    <div id="map" class="map"></div>
+    <script type="text/javascript">
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([113.15, 23.03]),
+          zoom: 4
+        })
+      });
+
+      // 监听singleclick事件  
+//     map.on('singleclick', function(e){
+//         console.log(e);  
+//         // alert(e.coordinate);  
+//         // alert(ol.proj.transform(e.coordinate, 'EPSG:3857', 'EPSG:4326'));  
+          
+//         // 通过getEventCoordinate方法获取地理位置，再转换为wgs84坐标，并弹出对话框显示  
+//         // alert(map.getEventCoordinate(e.originalEvent));  
+//         // alert(ol.proj.transform(map.getEventCoordinate(e.originalEvent), 'EPSG:3857', 'EPSG:4326'));  
+          
+//         var lonlat = map.getCoordinateFromPixel(e.pixel);    
+//         // console.log(lonlat);  
+//         // alert(ol.proj.transform(lonlat,"EPSG:3857", "EPSG:4326")); //由3857坐标系转为4326  
+// 　　　　   
+//     })  
+
+         // 监听singleclick事件  
+        /*  
+        map.on('click', function(event){  
+        //alert('触发点击事件' + event.clientX);  event.clienX 为undefined  
+        var t = ol.proj.transform(map.getEventCoordinate(event), 'EPSG:3857', 'EPSG:4326')  
+        alert(t);  
+        })  
+        */  
+        $("#map").click(function (e) {  
+            console.log('X ; '+ e.clientX  + '' + 'Y: '+e.clientY);
+            // alert('X ; '+ e.clientX  + 'Y: '+e.clientY);  
+            var t = ol.proj.transform(map.getEventCoordinate(e), 'EPSG:3857', 'EPSG:4326');  
+            console.log(t);  
+        })  
+    </script>
+</body>
+</html>

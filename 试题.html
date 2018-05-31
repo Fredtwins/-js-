@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .triangle06 {
+   width: 0;
+   height: 0;
+   border:50px solid transparent;
+   border-left:50px solid yellow; 
+  }
+  </style>
+</head>
+
+<body>
+  <div class="triangle06">
+    用css编写三角形
+  </div>
+
+  <script>
+  /*
+  1.请用css实现文本溢出显示省略号
+    单行： overflow:hidden;
+          text-overflow:ellipsis;
+          white-space:nowrap
+
+    多行： overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+  */
+
+  /*
+  2.页面导入样式的时候，link和import有什么区别
+
+   （1）link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;
+   （2）页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;
+   （3）import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题;
+  */
+
+  /*
+  3.行内元素有哪些，块级元素有哪些，空元素有哪些，
+  行内元素：a,b,span,i,strong
+  块级元素：div,dl,ol,hr,p,h1~h6
+  空元素：input,img,br,hr,link
+  */
+
+  /*
+  4.标准的css的盒子模型，和ie盒子模型有什么区别
+
+  CSS盒子模型：由四个属性组成的外边距(margin)、内边距(padding)、边界(border)、内容区(width和height);
+
+  标准的CSS盒子模型和低端IE CSS盒子模型不同：宽高不一样
+
+　标准的css盒子模型宽高就是内容区宽高；
+
+　低端IE css盒子模型宽高 内边距﹢边界﹢内容区；
+
+
+
+ 标准的盒子模型：内容(content)、填充(padding)、边界(margin)、 边框(border)；
+ 区  别： IE的content部分把 border 和 padding计算了进去;
+  */
+
+
+  /*
+  7.介绍js有哪些内置对象
+  Number，Boolean,string,Date,Math,Array
+  */
+
+  /*
+  8.null和undefined有什么区别
+  null是一个表示"无"的对象，转为数值时为0；
+  undefined是一个表示"无"的原始值，转为数值时为NaN。
+  */
+
+  /*
+  9.jq一个对象如何绑定多个事件
+    多个事件同一个函数
+    $('p').on("mouseon mouseout",function(){
+
+    })
+
+
+    或者：
+    $("table tr").on({
+    mouseenter: function() {
+        // Handle mouseenter...
+    },
+    mouseleave: function() {
+        // Handle mouseleave...
+    },
+    click: function() {
+        // Handle click...
+    }
+}, "td");
+  */
+
+
+  /*
+  11.数组去重
+  function array(arr) {
+    var str = [];
+
+    console.log(arr);
+    for(var i = 0;i < arr.length;i++) {
+      if(str.indexOf(arr[i]) == -1) {
+        str.push(arr[i]);
+      }
+    }
+    return str;
+  }
+  var arr = [1,5,3,6,6,6,6,3,2,5,6,6,2,11,2,9,62,6,9,5];
+  console.log(array(arr));
+
+  用es6的话就直接用Set这个方法
+  var tt  = [...new Set([5,5,6,6,8,8,9,10,10,1,5,3,6,6,6,6,3,2,5,6,6,2,11,2,9,62,6,9,5])];
+  console.log(tt);
+  */
+
+
+  
+  </script>
+</body>
+
+</html>
