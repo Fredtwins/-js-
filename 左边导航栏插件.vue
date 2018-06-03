@@ -1,7 +1,7 @@
 <template>
-	//判断他有没有children的，
+	<!-- //判断他有没有children的，
 	//设置点击事件，传的参数就是这个层级的link链接
-	//动态绑定name属性
+	//动态绑定name属性 -->
 	<menu-item v-if="item.children===undefined" style="cursor:pointer" @click="emitclick(item.link)" :name="item.name">{{item.name}}</menu-item>
 	
 	<submenu :name="index" v-else>

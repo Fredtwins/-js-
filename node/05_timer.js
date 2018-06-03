@@ -12,5 +12,4 @@ setTimeout(() => {
 process.nextTick(() => {
   console.log('nextTick');
 });
-
 //虽然setImmediate写在最前面，但是process.nextTick执行起来比它快
