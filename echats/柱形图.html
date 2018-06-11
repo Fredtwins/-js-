@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .main {
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main" id="main"></div>
+  <script src="./echarts.min.js"></script>
+  <script>
+    //初始化
+    var myecharts = echarts.init(document.getElementById('main'));
+
+    option = {
+      //主副标题
+      title: {
+        //是否显示
+        show: true,
+        //主标题
+        text: 'is 柱形图',
+        //副标题
+        subtext: '二当家的',
+        //主标题文本样式
+        // textStyle: {
+        //   fontSize: 18,
+        //   fontWeight: 'bolder',
+        //   color: '#333'
+        // },
+        //设置标题的X轴位置，居中，左，右
+        // x:'left',
+        //设置标题Y轴位置 top bottom center
+        // y:'top'
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      //小图标
+      toolbox: {
+        //是否显示
+        show: true,
+        //设置图标X轴的位置
+        x: 'center',
+        //设置图标Y轴的位置
+        y: 'top',
+        //各种小图标
+        feature: {
+          mark: {
+            show: true,
+            title: {
+              mark: '辅助线开关'
+            }
+          },
+          dataView: { show: true, readOnly: false },
+          magicType: { show: true, type: ['line', 'bar'] },
+          restore: { show: true },
+          saveAsImage: { show: true }
+        }
+      },
+      //图例，每个图表中最多一个图例
+      legend: {
+        show: true,
+        //图例内容数组，数组项通常为string，每一项代表一个系列的name
+        data: ['蒸发量', '降水量']
+      },
+      xAxis: [
+        {
+          type: 'category',
+          data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value'
+        }
+      ],
+      series: [
+        {
+          name: '蒸发量',
+          type: 'bar',
+          data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+          markPoint: {
+            data: [
+              { type: 'max', name: '最大值' },
+              { type: 'min', name: '最小值' }
+            ]
+          },
+          markLine: {
+            data: [
+              { type: 'average', name: '平均值' }
+            ]
+          }
+        },
+        {
+          name: '降水量',
+          type: 'bar',
+          data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+          markPoint: {
+            data: [
+              { name: '年最高', value: 182.2, xAxis: 7, yAxis: 183, symbolSize: 18 },
+              { name: '年最低', value: 2.3, xAxis: 11, yAxis: 3 }
+            ]
+          },
+          markLine: {
+            data: [
+              { type: 'average', name: '平均值' }
+            ]
+          }
+        }
+      ]
+    }
+
+    //最后要set出来
+    myecharts.setOption(option);
+
+  </script>
+</body>
+
+</html>

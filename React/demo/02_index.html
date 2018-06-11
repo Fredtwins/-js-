@@ -13,15 +13,22 @@
 
 <body>
   <div id="reactstyle"></div>
-  <!-- React 独有的 JSX 语法，跟 JavaScript 不兼容。凡是使用 JSX 的地方，都要加上 type="text/babel" -->
-  <script type="text/babel">
-  // 有两个参数，第一个就是所谓的标签，第二个就是要渲染到哪个标签上面去
-    ReactDOM.render(
-      <h1>你好，hello world</h1>,
-      document.getElementById('reactstyle')
-    )
-  </script>
 
+  <script type="text/babel">
+    var name = ['Fred' , 'yezi' ,'love'];
+
+    ReactDOM.render(
+      <div>
+       {
+        name.map((name,index) => {
+          return <div key={index}> Hello, {name}!</div> 
+        })
+       }
+      </div>,
+      document.getElementById('reactstyle')  
+    )
+    
+  </script>
 </body>
 
 </html>
