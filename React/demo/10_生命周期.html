@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <title>React生命周期</title>
+</head>
+<body>
+    <script type="text/babel">
+        var ReactList = React.createClass({
+            getInitialState: function() {
+                return {
+                    opacity: 1.0
+                }
+            },
+
+            componentDidMount: function() {
+                this.timer = setInterval(function() {
+                console.log('正在执行')
+                    var opacity = this.state.opacity;
+                    opacity -= .05;
+                    if(opacity < 0.1) {
+                        opacity = 1.0;
+                    }
+                    this.setState({
+                        opacity: opacity
+                    })
+                    console.log(opacity)
+                }.bind(this), 1000)
+            },
+            render:function() {
+                return (
+                    <div style={{opacity: this.state.opacity}}>
+                        Hello {this.props.name}
+                    </div>
+                )
+            }
+        });
+
+        ReactDOM.render(
+            <ReactList name="Fred"/>,
+            document.body
+        )
+    </script>
+</body>
+</html>
