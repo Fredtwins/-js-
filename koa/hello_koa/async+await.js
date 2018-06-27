@@ -26,7 +26,7 @@ function delay(name) {
 //2.利用async 和 await来完成异步操作
 //async必须是放在外部来当成一个函数
 async function statr() {
-    //await可以理解为等你的意思
+    //await可以理解为等你的意思,等你的Promise完成才执行下面的代码
     const params = await delay('小仙女');
     console.log(params);
     const name = await delay('叶子');
