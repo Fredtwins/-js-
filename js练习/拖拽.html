@@ -29,6 +29,7 @@
     move_dom(oDiv);
     function move_dom(oDiv){
       oDiv.onmousedown = function (ev) {
+        console.log(ev)
         var disX = ev.clientX - oDiv.offsetLeft
           var disY = ev.clientY - oDiv.offsetTop
 
