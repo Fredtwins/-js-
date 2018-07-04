@@ -72,7 +72,7 @@
 			for(let i = 0; i < moveItem.length; i++) {
 				//动态设置label元素id
 				moveItem[i].setAttribute('id', 'label' + i);
-				console.log(this.id);
+				// console.log(this.id);
 				moveItem[i].ondragstart = function(ev) {
 					//dataTransfer.setData() 方法设置被拖数据的数据类型和值
 					ev.dataTransfer.setData("id", this.id);
@@ -101,15 +101,19 @@
 			}
 
 			document.getElementById('left').ondragover = function(ev) {
+				// console.log(ev)
 				ev.preventDefault(); //阻止向上冒泡
 			}
 			document.getElementById('left').ondragenter = function(ev) {
+				// console.log(ev)
 				ev.target.classList.add('over')
 			}
 			document.getElementById('left').ondragleave = function(ev) {
+				console.log(ev)
 				ev.target.classList.remove('over')
 			}
 			document.getElementById('left').ondrop = function(ev) {
+				console.log(ev);
 				ev.preventDefault();
 				ev.target.classList.remove('over')
 				var id = ev.dataTransfer.getData('id');
