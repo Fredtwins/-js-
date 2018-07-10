@@ -85,31 +85,31 @@
 //			outer();
 
 
-			function fn(n) {
-				if(typeof n != 'number') {
-					alert('a');
-					return
-				};
-				if(parseInt(n) != n) {
-					alert('aa');
-					return
-				}
-				var arr = [];
-				while (n > 0) {
-					var num = Math.ceil(Math.random() * 30) + 2;
-					arr.push(num);
-					n--;
-				}
-				arr.sort(function(a, b) {
-					console.log(a);
-				console.log('--------------')
-					console.log(b);
-					return a - b;
-				});
-				// console.log(arr);
-				return arr;
-			}
-			fn(10);
+			// function fn(n) {
+			// 	if(typeof n != 'number') {
+			// 		alert('a');
+			// 		return
+			// 	};
+			// 	if(parseInt(n) != n) {
+			// 		alert('aa');
+			// 		return
+			// 	}
+			// 	var arr = [];
+			// 	while (n > 0) {
+			// 		var num = Math.ceil(Math.random() * 30) + 2;
+			// 		arr.push(num);
+			// 		n--;
+			// 	}
+			// 	arr.sort(function(a, b) {
+			// 		console.log(a);
+			// 	console.log('--------------')
+			// 		console.log(b);
+			// 		return a - b;
+			// 	});
+			// 	// console.log(arr);
+			// 	return arr;
+			// }
+			// fn(10);
 			// console.log(fn(10));
 
 			// function querySearch() {
@@ -131,6 +131,25 @@
 			// }
 			// querySearch()
 			// console.log(querySearch());
+
+
+
+
+			this.a = 20;
+			const test = {
+				a:30,
+				init:() => {
+					console.log(this.a);
+					function go() {
+						this.a = 40;
+						console.log(this.a);
+					}
+					go.prototype.a = 50;
+					return go;
+				}
+			};
+			const p = test.init();
+			new p();
 		</script>
 	</body>
 

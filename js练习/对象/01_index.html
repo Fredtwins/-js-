@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 通过new来创建对象
+        var str = new Array();
+        console.log(str);
+
+        var date = new Date();
+        console.log(date);
+
+        var r = new RegExp("js");
+        console.log(r);
+
+
+
+
+        // 2. 通过原型继承创建一个新的对象
+        function init(p) {
+            if(p === null) throw TypeError();
+            if(Object.create) 
+                return Object.create(p);
+            var t = typeof p;
+            if(t != "object" && t !== "function") throw TypeError();
+            function f() {}
+            f.prototype = p;
+            return new f();
+        }
+    </script>
+</body>
+</html>

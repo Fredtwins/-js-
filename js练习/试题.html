@@ -1,114 +1,150 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-		<script>
-			//按顺序打印结果是~~
-//			(function() {
-//				console.log(1);
-//				setTimeout(function() {
-//					console.log(4)
-//				},1000);
-//				setTimeout(function() {
-//					console.log(2)
-//				},0);
-//				console.log(3)
-//			})();
-			
-			
-			//使用typeof bar ===“object”来确定bar是否是一个对象时有什么潜在的缺陷？这个陷阱如何避免
-//			var bar = null;
-//			console.log(typeof bar === "object");
-//			console.log(Array.isArray(bar));
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+
+<body>
+	<script>
+		//按顺序打印结果是~~
+		//			(function() {
+		//				console.log(1);
+		//				setTimeout(function() {
+		//					console.log(4)
+		//				},1000);
+		//				setTimeout(function() {
+		//					console.log(2)
+		//				},0);
+		//				console.log(3)
+		//			})();
+
+
+		//使用typeof bar ===“object”来确定bar是否是一个对象时有什么潜在的缺陷？这个陷阱如何避免
+		//			var bar = null;
+		//			console.log(typeof bar === "object");
+		//			console.log(Array.isArray(bar));
 
 
 
 
-			//下面的代码将输出到控制台的是什么，为什么
-			/*
-			由于a和b都在函数的封闭范围内定义，并且由于它们所在的行以var关键字开头，因此大多数JavaScript开发人员会希望typeof a和typeof b在上面的示例中都未定义
-			*/
-			// (function() {
-			// 	var a = b = 3;
-			// })();
-			// console.log("a defind" + (typeof a !== "undefined")); //true
-			// console.log("b defind" + (typeof b !== "undefined")); //false
-
-			
+		//下面的代码将输出到控制台的是什么，为什么
+		/*
+		由于a和b都在函数的封闭范围内定义，并且由于它们所在的行以var关键字开头，因此大多数JavaScript开发人员会希望typeof a和typeof b在上面的示例中都未定义
+		*/
+		// (function() {
+		// 	var a = b = 3;
+		// })();
+		// console.log("a defind" + (typeof a !== "undefined")); //true
+		// console.log("b defind" + (typeof b !== "undefined")); //false
 
 
-			//下面的代码将输出到控制台的是什么
-				/*
-				在外部函数中，this和self都引用myObject，因此都可以正确地引用和访问foo。
+
+
+		//下面的代码将输出到控制台的是什么
+		/*
+		在外部函数中，this和self都引用myObject，因此都可以正确地引用和访问foo。
 但在内部函数中，这不再指向myObject。因此，this.foo在内部函数中是未定义的，而对局部变量self的引用仍然在范围内并且可以在那里访问。
-				*/
+		*/
 
-			// var myObject = {
-			// 	foo:'bar',
-			// 	func:function() {
-			// 		var that = this;
-			// 		console.log(this.foo);
-			// 		console.log(that.foo);
-			// 		(function() {
-			// 			console.log(this.foo);
-			// 			console.log(that.foo);
-			// 		})()
-			// 	}
-			// }
+		// var myObject = {
+		// 	foo:'bar',
+		// 	func:function() {
+		// 		var that = this;
+		// 		console.log(this.foo);
+		// 		console.log(that.foo);
+		// 		(function() {
+		// 			console.log(this.foo);
+		// 			console.log(that.foo);
+		// 		})()
+		// 	}
+		// }
 
-			// myObject.func();
+		// myObject.func();
 
-
-
-
-
-			// var fn = null;
-			// function foo() {
-			// 	var a = 2;
-			// 	function innerfoo() {
-			// 		// console.log(c);// is not defind
-			// 		console.log(a);//2
-			// 	}
-			// 	fn = innerfoo;
-			// }
-			// function bar() {
-			// 	var c = 10;
-			// 	fn();
-			// }
-			// foo();
-			// bar(); 
-			
-
-
-
-			// 鸡兔同笼1200只
-			function sum() {
-				var a = 0;//鸡
-				var b = 0;//兔
-				//循环判断
-				for(var a = 0;a < 1200;a++) {
-					b = 1200 - a;
-					// 判断脚数
-					if(2 * a + 4 * b == 3000) {
-						console.log("鸡" + a + "只", "兔" + b + "只")
-					}
-				}
+		//判断字符串里面出现最多的		
+		var str = "abcdefgaddda";
+		var obj = {};
+		for (var i = 0, l = str.length; i < l; i++) {
+			var key = str[i];
+			if (!obj[key]) {
+				obj[key] = 1;
+			} else {
+				obj[key]++;
 			}
-			sum();
+		}
+		console.log(obj);
+		var max = -1;
+		var max_key = "";
+		var key;
+		for (key in obj) {
+			if (max < obj[key]) {
+				max = obj[key];
+				max_key = key;
+			}
+		}
+		console.log(max, max_key)
 
 
 
 
 
+		// var fn = null;
+		// function foo() {
+		// 	var a = 2;
+		// 	function innerfoo() {
+		// 		// console.log(c);// is not defind
+		// 		console.log(a);//2
+		// 	}
+		// 	fn = innerfoo;
+		// }
+		// function bar() {
+		// 	var c = 10;
+		// 	fn();
+		// }
+		// foo();
+		// bar(); 
 
-			
-			
-			
-			
-			
-		</script>
-	</body>
+
+
+
+		// 鸡兔同笼1200只
+		// function sum() {
+		// 	var a = 0;//鸡
+		// 	var b = 0;//兔
+		// 	//循环判断
+		// 	for(var a = 0;a < 1200;a++) {
+		// 		b = 1200 - a;
+		// 		// 判断脚数
+		// 		if(2 * a + 4 * b == 3000) {
+		// 			console.log("鸡" + a + "只", "兔" + b + "只")
+		// 		}
+		// 	}
+		// }
+		// sum();
+
+		//判断字符串里面出现最多的
+		// var str = 'aaaabihduqiwnuidnxaaaa';
+		// var json = {};
+		// for (var i = 0; i < str.length; i++) {
+		// 	if (!json[str.charAt(i)]) {
+		// 		json[str.charAt(i)] = 1;
+		// 	} else {
+		// 		json[str.charAt(i)]++;
+		// 	}
+		// }
+		// console.log(json)
+		// var number = '';
+		// var num = 0;
+		// for (var i in json) {
+		// 	if (json[i] > num) {
+		// 		num = json[i];
+		// 		number = i;
+		// 	}
+		// }
+		// console.log(number, num)
+	</script>
+</body>
+
 </html>
