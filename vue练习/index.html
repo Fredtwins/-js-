@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue/vue234.js"></script>
+</head>
+
+<body>
+    <div class="cont" id="app">{{content}}</div>
+    <script>
+        var vue = new Vue({
+            el: '#app',
+            data: {
+                content: 'hahahha'
+            },
+            methods: {
+                getlist() {
+                    // 注意this指向的问题
+                    console.log(this);
+                    
+                    // setTimeout(function () {
+                    //     vue.$data.content = "演练"
+                    //     console.log(vue.$data.content);
+                    // }, 3000);
+
+                    setTimeout(() => {
+                        this.content = 'fred';
+                        console.log(this.content);
+                    },3000)
+                }
+            },
+            mounted() {
+                this.getlist();
+            },
+        })
+    </script>
+</body>
+
+</html>
