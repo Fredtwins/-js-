@@ -1,0 +1,181 @@
+{
+  "ID": 3,
+  "WEATHERDESC": "阵雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "zhenyu.png",
+  "RN": 4
+}, {
+  "ID": 4,
+  "WEATHERDESC": "雷阵雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "leizhenyu.png",
+  "RN": 5
+}, {
+  "ID": 5,
+  "WEATHERDESC": "雷阵雨并伴有冰雹",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "lzybinbao.png",
+  "RN": 6
+}, {
+  "ID": 6,
+  "WEATHERDESC": "雨夹雪",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "yuxue.png",
+  "RN": 7
+}, {
+  "ID": 7,
+  "WEATHERDESC": "小雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "xiaoyu.png",
+  "RN": 8
+}, {
+  "ID": 8,
+  "WEATHERDESC": "中雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "zhongyu.png",
+  "RN": 9
+}, {
+  "ID": 9,
+  "WEATHERDESC": "大雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "dayu.png",
+  "RN": 10
+}, {
+  "ID": 10,
+  "WEATHERDESC": "暴雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "baoyu.png",
+  "RN": 11
+}, {
+  "ID": 11,
+  "WEATHERDESC": "大暴雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "dabaoyu.png",
+  "RN": 12
+}, {
+  "ID": 12,
+  "WEATHERDESC": "特大暴雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "tedabaoyu.png",
+  "RN": 13
+}, {
+  "ID": 13,
+  "WEATHERDESC": "阵雪",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "zhenxue.png",
+  "RN": 14
+}, {
+  "ID": 14,
+  "WEATHERDESC": "小雪",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "xiaoxue.png",
+  "RN": 15
+}, {
+  "ID": 15,
+  "WEATHERDESC": "中雪",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "zhongxue.png",
+  "RN": 16
+}, {
+  "ID": 16,
+  "WEATHERDESC": "大雪",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "daxue.png",
+  "RN": 17
+}, {
+  "ID": 17,
+  "WEATHERDESC": "暴雪",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "baoxue.png",
+  "RN": 18
+}, {
+  "ID": 18,
+  "WEATHERDESC": "雾",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "wu.png",
+  "RN": 19
+}, {
+  "ID": 19,
+  "WEATHERDESC": "冻雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "dongyu.png",
+  "RN": 20
+}, {
+  "ID": 20,
+  "WEATHERDESC": "沙尘暴",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "shachenbao.png",
+  "RN": 21
+}, {
+  "ID": 21,
+  "WEATHERDESC": "小到中雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "xiaozhongyu.png",
+  "RN": 22
+}, {
+  "ID": 22,
+  "WEATHERDESC": "中到大雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "zhongdayu.png",
+  "RN": 23
+}, {
+  "ID": 23,
+  "WEATHERDESC": "大到暴雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "datobaoyu.png",
+  "RN": 24
+}, {
+  "ID": 24,
+  "WEATHERDESC": "暴雨到大暴雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "baodabaoyu.png",
+  "RN": 25
+}, {
+  "ID": 25,
+  "WEATHERDESC": "大暴雨到特大暴雨",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "datedayu.png",
+  "RN": 26
+}, {
+  "ID": 26,
+  "WEATHERDESC": "小到中雪",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "xiaozhengxue.png",
+  "RN": 27
+}, {
+  "ID": 27,
+  "WEATHERDESC": "中到大雪",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "zhongdaxue.png",
+  "RN": 28
+}, {
+  "ID": 28,
+  "WEATHERDESC": "大到暴雪",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "datobaoxue.png",
+  "RN": 29
+}, {
+  "ID": 29,
+  "WEATHERDESC": "浮尘",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "fuchen.png",
+  "RN": 30
+}, {
+  "ID": 30,
+  "WEATHERDESC": "扬沙",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "yangsha.png",
+  "RN": 31
+}, {
+  "ID": 31,
+  "WEATHERDESC": "强沙尘暴",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "qiangshachen.png",
+  "RN": 32
+}, {
+  "ID": 53,
+  "WEATHERDESC": "霾",
+  "IMGPATH": "weatherIcons",
+  "IMGNAME": "mai.png",
+  "RN": 33
+}
