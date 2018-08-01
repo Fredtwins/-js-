@@ -7,22 +7,37 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" id="aa"/>
-    <span id="bb">{{hello}}</span>
+    <input type="text" id="inputValue" />
+    <span id="inputitem">{{item}}</span>
     <script>
-        var obj = {};
-        Object.defineProperty(obj,'hello',{
-            set:function(val) {
-                console.log(val)
-                document.getElementById('bb').innerHTML = val;
-                document.getElementById('aa').value = val;
-            }
-        });
-        document.getElementById('aa').onkeyup = function(e) {
-            console.log(e);
-            obj.hello = e.target.value;
-        };
-        obj.hello = '';
+    	/*
+    	 Object.defineProperty(object, propertyname, descriptor)
+    	 语法：
+    	 	object 必需。 要在其上添加或修改属性的对象。 这可能是一个本机 JavaScript对象（即用户定义的对象或内置对象）或 DOM 对象。
+    	 	propertyname 必需。 一个包含属性名称的字符串。
+    	 	descriptor 必需。 属性描述符。 它可以针对数据属性或访问器属性。
+    	 * */
+    	
+    	var obj = {}
+    	var inputValue = document.getElementById('inputValue');
+    	var inputitem = document.getElementById('inputitem');
+    	
+    	// 这个方法直接在一个对象上定义一个新的属性，或者是修改已存在的属性。最终这个方法会返回该对象
+    	Object.defineProperty(obj, 'item', {
+    		set:function(val) {
+    			console.log(val);
+    			inputitem.innerHTML = val;
+    			inputValue.value = val;
+    		}
+    	});
+    	
+    	// 键盘事件
+    	inputValue.onkeyup = function(e) {
+    		console.log(e);
+    		obj.item = e.target.value;
+    	}
+    	
+    	obj.item = '';
     </script>
 </body>
 </html>

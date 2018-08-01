@@ -28,7 +28,6 @@
     <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 
     <script type="text/javascript">
-
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
 
@@ -97,39 +96,43 @@
             tooltip: {
                 position: 'top'
             },
-
+            //视觉映射组件，用于进行『视觉编码』，也就是将数据映射到视觉元素。
+            //视觉元素可以是：symbol: 图元的图形类别。symbolSize: 图元的大小。color: 图元的颜色。
             visualMap: [
                 {
-                min: 0,
-                max: 1000,
-                calculable: true,
-                seriesIndex: [2, 3, 4],
-                orient: 'horizontal',
-                left: '55%',
-                bottom: 20
-            }, 
-            {
-                min: 0,
-                max: 1000,
-                inRange: {
-                    color: ['grey'],
-                    opacity: [0, 0.3]
+                    min: 0,
+                    max: 1000,
+                    //是否显示拖拽用的手柄（手柄能拖拽调整选中范围）
+                    calculable: true,
+                    ////指定取哪个系列的数据，即哪个系列的 series.data,默认取所有系列
+                    seriesIndex: [2, 3, 4],
+                    orient: 'horizontal',
+                    left: '55%',
+                    bottom: 20
                 },
-                controller: {
+                {
+                    min: 0,
+                    max: 1000,
+                    //定义 在选中范围中 的视觉元素
                     inRange: {
-                        opacity: [0.3, 0.6]
+                        color: ['grey'],
+                        opacity: [0, 0.3]
                     },
-                    outOfRange: {
-                        color: '#ccc'
-                    }
-                },
-                calculable: true,
-                seriesIndex: [1],
-                orient: 'horizontal',
-                left: '10%',
-                bottom: 20
-            }
-        ],
+                    controller: {
+                        inRange: {
+                            opacity: [0.3, 0.6]
+                        },
+                        outOfRange: {
+                            color: '#ccc'
+                        }
+                    },
+                    calculable: true,
+                    seriesIndex: [1],
+                    orient: 'horizontal',
+                    left: '10%',
+                    bottom: 20
+                }
+            ],
 
             calendar: [
                 {
@@ -189,42 +192,49 @@
                     top: 350,
                     left: 460,
                     range: '2017-04'
-                }],
+                }
+            ],
 
-            series: [{
-                type: 'graph',
-                edgeSymbol: ['none', 'arrow'],
-                coordinateSystem: 'calendar',
-                links: links,
-                symbolSize: 10,
-                calendarIndex: 0,
-                data: graphData
-            }, {
-                type: 'heatmap',
-                coordinateSystem: 'calendar',
-                data: getVirtulData(2017)
-            }, {
-                type: 'effectScatter',
-                coordinateSystem: 'calendar',
-                calendarIndex: 1,
-                symbolSize: function (val) {
-                    return val[1] / 40;
+            series: [
+                //     {
+                //     type: 'graph',
+                //     edgeSymbol: ['none', 'arrow'],
+                //     coordinateSystem: 'calendar',
+                //     links: links,
+                //     symbolSize: 10,
+                //     calendarIndex: 0,
+                //     data: graphData
+                // }, 
+                // {
+                //     type: 'heatmap',
+                //     coordinateSystem: 'calendar',
+                //     data: getVirtulData(2017)
+                // }, 
+                {
+                    type: 'effectScatter',
+                    coordinateSystem: 'calendar',
+                    calendarIndex: 1,
+                    symbolSize: function (val) {
+                        return val[1] / 40;
+                    },
+                    data: getVirtulData(2017)
                 },
-                data: getVirtulData(2017)
-            }, {
-                type: 'scatter',
-                coordinateSystem: 'calendar',
-                calendarIndex: 2,
-                symbolSize: function (val) {
-                    return val[1] / 60;
+                {
+                    type: 'scatter',
+                    coordinateSystem: 'calendar',
+                    calendarIndex: 2,
+                    symbolSize: function (val) {
+                        return val[1] / 60;
+                    },
+                    data: getVirtulData(2017)
                 },
-                data: getVirtulData(2017)
-            }, {
-                type: 'heatmap',
-                coordinateSystem: 'calendar',
-                calendarIndex: 3,
-                data: getVirtulData(2017)
-            }]
+                {
+                    type: 'heatmap',
+                    coordinateSystem: 'calendar',
+                    calendarIndex: 3,
+                    data: getVirtulData(2017)
+                }
+            ]
         };
         ;
         console.log(option)
